@@ -4,8 +4,6 @@ import SortingButton from "./components/SortingButton/SortingButton";
 
 function App() {
     const [data, setData] = useState([]);
-    const [sortField, setSortField] = useState('');
-    const [reverseSort, setReverseSort] = useState(false);
 
     useEffect(() => {
         fetch('mock_data.json').then(res => res.json()).then((data) => {
@@ -13,33 +11,12 @@ function App() {
         })
     }, []);
 
-    useEffect(() => {
-        if (reverseSort) {
-            setData([...data].reverse())
-        } else {
-            const isString = sortField && Number.isNaN(Number(data[0][sortField]));
-            const sortedData = data.sort((a, b) => {
-                return  isString ? a[sortField].localeCompare(b[sortField]) : a[sortField] - b[sortField];
-            });
-            setData([...sortedData]);
-        }
-    }, [sortField, reverseSort]);
-
-    const sortBy = (field) => {
-        if (field === sortField) {
-            setReverseSort(!reverseSort)
-        } else {
-            setReverseSort(false);
-            setSortField(field);
-        }
-    }
-
     return (
         <table className="table table-striped align-middle">
             <thead className="table-dark">
             <tr>
                 <th scope="col">
-                    <SortingButton sortBy={sortBy} title={'Tytuł'} fieldName={'title'} activeSort={sortField} reverseSort={reverseSort}/>
+                    <SortingButton title={'Tytuł'} fieldName={'title'} setData={setData} data={data}/>
                 </th>
                 <th scope="col">Gatunek</th>
                 <th scope="col">Zdjęcie</th>
@@ -47,7 +24,7 @@ function App() {
                 <th scope="col">Język</th>
                 <th scope="col">Rok produkcji</th>
                 <th scope="col">
-                    <SortingButton sortBy={sortBy} title={'Cena'} fieldName={'price'} activeSort={sortField} reverseSort={reverseSort}/>
+                    <SortingButton title={'Cena'} fieldName={'price'} setData={setData} data={data}/>
                 </th>
             </tr>
             </thead>
