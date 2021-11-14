@@ -3,8 +3,6 @@ import MovieList from "./components/MovieList";
 
 
 function App() {
-
-    console.log(DataContextProvider)
     return (
         <DataContextProvider>
             <MovieList/>

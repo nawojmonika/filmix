@@ -3,31 +3,32 @@ import React, {createContext, useEffect, useState} from 'react';
 const DataContext = createContext({
     data: [],
     sortField: '',
-    filters: {
-        from: undefined,
-        to: undefined
-    },
     setData: () => {},
     setSortField: () => {},
-    setFilters: () => {},
+    resetData: () => {}
 });
 
 const DataContextProvider = ({children}) => {
+    const [initialData, setInitialData] = useState([]);
     const [data, setData] = useState([]);
     const [sortField, setSortField] = useState('');
-    const [filters, setFilters] = useState({
-        from: undefined,
-        to: undefined
-    });
 
     useEffect(() => {
         fetch('mock_data.json').then(res => res.json()).then((data) => {
-            setData(data);
+            setInitialData(data);
         })
     }, []);
 
+    const resetData = () => {
+        setData(initialData);
+    }
+
+    useEffect(() => {
+        resetData();
+    }, [initialData]);
+
     return (
-        <DataContext.Provider value={{data, sortField, filters, setData, setSortField, setFilters}}>
+        <DataContext.Provider value={{data, sortField, setData, setSortField, resetData}}>
             {children}
         </DataContext.Provider>
     );
