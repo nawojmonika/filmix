@@ -1,5 +1,6 @@
 import './App.css';
 import {useEffect, useState} from "react";
+import SortingButton from "./components/SortingButton/SortingButton";
 
 function App() {
     const [data, setData] = useState([]);
@@ -38,9 +39,7 @@ function App() {
             <thead className="table-dark">
             <tr>
                 <th scope="col">
-                    <button className="btn btn-dark" onClick={() => sortBy('title')}>
-                        <strong>Tytuł {sortField === 'title' && <i className={`bi ${reverseSort ? 'bi-arrow-down-short' : 'bi-arrow-up-short'}`}></i>}</strong>
-                    </button>
+                    <SortingButton sortBy={sortBy} title={'Tytuł'} fieldName={'title'} activeSort={sortField} reverseSort={reverseSort}/>
                 </th>
                 <th scope="col">Gatunek</th>
                 <th scope="col">Zdjęcie</th>
@@ -48,9 +47,7 @@ function App() {
                 <th scope="col">Język</th>
                 <th scope="col">Rok produkcji</th>
                 <th scope="col">
-                    <button className="btn btn-dark" onClick={() => sortBy('price')}>
-                        <strong>Cena {sortField === 'price' && <i className={`bi ${reverseSort ? 'bi-arrow-down-short' : 'bi-arrow-up-short'}`}></i>}</strong>
-                    </button>
+                    <SortingButton sortBy={sortBy} title={'Cena'} fieldName={'price'} activeSort={sortField} reverseSort={reverseSort}/>
                 </th>
             </tr>
             </thead>
