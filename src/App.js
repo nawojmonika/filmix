@@ -1,6 +1,6 @@
 import './App.css';
 import {useEffect, useState} from "react";
-import SortingButton from "./components/SortingButton/SortingButton";
+import SortingButton from "./components/SortingButton";
 
 function App() {
     const [data, setData] = useState([]);
