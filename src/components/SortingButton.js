@@ -1,7 +1,8 @@
-import React, {useEffect, useState} from "react";
+import React, {useContext, useEffect, useState} from "react";
+import {DataContext} from "../contexts/DataContext";
 
-const SortingButton = ({title, fieldName, setData, data}) => {
-    const [sortField, setSortField] = useState('');
+const SortingButton = ({title, fieldName}) => {
+    const {data, setData, sortField, setSortField} = useContext(DataContext);
     const [reverseSort, setReverseSort] = useState(false);
 
     useEffect(() => {
