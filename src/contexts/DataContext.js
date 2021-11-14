@@ -5,7 +5,8 @@ const DataContext = createContext({
     sortField: '',
     setData: () => {},
     setSortField: () => {},
-    resetData: () => {}
+    resetData: () => {},
+    setInitialData: () => {}
 });
 
 const DataContextProvider = ({children}) => {
@@ -28,7 +29,7 @@ const DataContextProvider = ({children}) => {
     }, [initialData]);
 
     return (
-        <DataContext.Provider value={{data, sortField, setData, setSortField, resetData}}>
+        <DataContext.Provider value={{data, sortField, setData, setSortField, resetData, setInitialData}}>
             {children}
         </DataContext.Provider>
     );

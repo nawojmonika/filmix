@@ -4,7 +4,13 @@ import PriceFilter from "./PriceFilter";
 import {DataContext} from "../contexts/DataContext";
 
 const MovieList = () => {
-    const {data} = useContext(DataContext);
+    const {data, setInitialData} = useContext(DataContext);
+
+    const handleRemoveItem = (id) => {
+        const filteredData = data.filter((elem) => elem.id != id);
+        setInitialData([...filteredData]);
+    };
+
     return (
         <>
             <PriceFilter/>
@@ -22,6 +28,7 @@ const MovieList = () => {
                     <th scope="col">
                         <SortingButton title={'Cena'} fieldName={'price'}/>
                     </th>
+                    <th scope="col"></th>
                 </tr>
                 </thead>
                 <tbody>
@@ -47,6 +54,9 @@ const MovieList = () => {
                         </td>
                         <td className="col-1">
                             {price} PLN
+                        </td>
+                        <td>
+                            <button className="btn btn-danger" onClick={() => handleRemoveItem(id)}>Usuń</button>
                         </td>
                     </tr>
                 )}
