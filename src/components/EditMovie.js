@@ -1,7 +1,7 @@
 import React, {useContext} from "react";
 import {DataContext} from "../contexts/DataContext";
 
-const EditButtons = ({id}) => {
+const EditMovie = ({id}) => {
     const {data, setInitialData} = useContext(DataContext);
 
     const handleRemoveItem = (id) => {
@@ -41,4 +41,4 @@ const EditButtons = ({id}) => {
         </>
     );
 }
-export default EditButtons;
+export default EditMovie;

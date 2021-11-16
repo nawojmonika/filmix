@@ -2,7 +2,7 @@ import React, {useContext} from "react";
 import {DataContext} from "../contexts/DataContext";
 import SortingButton from "./SortingButton";
 import PriceFilter from "./PriceFilter";
-import EditButtons from "./EditButtons";
+import EditMovie from "./EditMovie";
 
 const MovieList = () => {
     const {data} = useContext(DataContext);
@@ -52,7 +52,7 @@ const MovieList = () => {
                             {price} PLN
                         </td>
                         <td>
-                            <EditButtons id={id}/>
+                            <EditMovie id={id}/>
                         </td>
                     </tr>
                 )}
