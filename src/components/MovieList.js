@@ -1,15 +1,11 @@
 import React, {useContext} from "react";
+import {DataContext} from "../contexts/DataContext";
 import SortingButton from "./SortingButton";
 import PriceFilter from "./PriceFilter";
-import {DataContext} from "../contexts/DataContext";
+import EditButtons from "./EditButtons";
 
 const MovieList = () => {
-    const {data, setInitialData} = useContext(DataContext);
-
-    const handleRemoveItem = (id) => {
-        const filteredData = data.filter((elem) => elem.id != id);
-        setInitialData([...filteredData]);
-    };
+    const {data} = useContext(DataContext);
 
     return (
         <>
@@ -56,7 +52,7 @@ const MovieList = () => {
                             {price} PLN
                         </td>
                         <td>
-                            <button className="btn btn-danger" onClick={() => handleRemoveItem(id)}>Usuń</button>
+                            <EditButtons id={id}/>
                         </td>
                     </tr>
                 )}
