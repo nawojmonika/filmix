@@ -26,15 +26,15 @@ const MovieList = () => {
                     <th scope="col">
                         <SortingButton title={'Cena'} fieldName={'price'}/>
                     </th>
-                    <th scope="col"></th>
+                    <th scope="col"/>
                 </tr>
                 </thead>
                 <tbody>
-                {data.map(({id, title, genre, url, desc, lang, year, price}) =>
+                {data?.map(({id, title, genre, url, desc, lang, year, price}) =>
                     <tr key={id}>
                         <td className="col-2"><strong>{title}</strong></td>
                         <td>
-                            {genre.map(name => (
+                            {genre?.map(name => (
                                 <span className="badge bg-secondary">{name}</span>
                             ))}
                         </td>
@@ -43,7 +43,7 @@ const MovieList = () => {
                         </td>
                         <td>{desc}</td>
                         <td>
-                            {lang.map(name => (
+                            {lang?.map(name => (
                                 <span className="badge bg-info">{name}</span>
                             ))}
                         </td>

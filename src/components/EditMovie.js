@@ -3,15 +3,15 @@ import {DataContext} from "../contexts/DataContext";
 import MovieForm from "./MovieForm";
 
 const EditMovie = ({id}) => {
-    const {data, setInitialData} = useContext(DataContext);
+    const {initialData, setInitialData} = useContext(DataContext);
 
     const handleRemoveItem = (id) => {
-        const filteredData = data.filter((elem) => elem.id != id);
+        const filteredData = initialData.filter((elem) => elem.id != id);
         setInitialData([...filteredData]);
     };
 
     const handleEditItem = (id) => {
-        const filteredData = data.filter((elem) => elem.id != id);
+        const filteredData = initialData.filter((elem) => elem.id != id);
         // setInitialData([...filteredData]);
     };
 

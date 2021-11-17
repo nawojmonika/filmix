@@ -1,6 +1,6 @@
 import React, {useRef} from "react";
 
-const MovieForm = ({formId, title, children, onSubmit}) => {
+const MovieForm = ({formId, title, onSubmit, children}) => {
     const getCheckedValues = (checkList) => checkList.filter(({checked}) => checked).map(({value}) => value);
     const closeBtn = useRef();
 

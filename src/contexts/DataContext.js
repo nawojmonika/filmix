@@ -2,6 +2,7 @@ import React, {createContext, useEffect, useState} from 'react';
 
 const DataContext = createContext({
     data: [],
+    initialData: [],
     sortField: '',
     setData: () => {},
     setSortField: () => {},
@@ -29,7 +30,7 @@ const DataContextProvider = ({children}) => {
     }, [initialData]);
 
     return (
-        <DataContext.Provider value={{data, sortField, setData, setSortField, resetData, setInitialData}}>
+        <DataContext.Provider value={{data, initialData, sortField, setData, setSortField, resetData, setInitialData}}>
             {children}
         </DataContext.Provider>
     );
