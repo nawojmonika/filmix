@@ -54,7 +54,7 @@ const MovieForm = ({formId, title, data, onSubmit, children}) => {
                                     <div className="col-md">
                                         <div className="form-floating">
                                             <input type="number" className="form-control" id="year" name="year"
-                                                   min="1950" max="2021" placeholder="2021"/>
+                                                   min="1950" max="2021" placeholder="2021" defaultValue={data?.year}/>
                                             <label htmlFor="Year">Rok produkcji</label>
                                         </div>
                                     </div>
@@ -63,27 +63,27 @@ const MovieForm = ({formId, title, data, onSubmit, children}) => {
                                 <div>
                                     <div className="form-check form-check-inline">
                                         <input className="form-check-input" type="checkbox" id="Thriller"
-                                               value="Thriller" name="genre"/>
+                                               value="Thriller" name="genre" defaultChecked={data?.genre?.includes("Thriller")}/>
                                         <label className="form-check-label" htmlFor="Thriller">Thriller</label>
                                     </div>
                                     <div className="form-check form-check-inline">
                                         <input className="form-check-input" type="checkbox" id="Dramat"
-                                               value="Dramat" name="genre"/>
+                                               value="Dramat" name="genre" defaultChecked={data?.genre?.includes("Dramat")}/>
                                         <label className="form-check-label" htmlFor="Dramat">Dramat</label>
                                     </div>
                                     <div className="form-check form-check-inline">
                                         <input className="form-check-input" type="checkbox" id="Komedia"
-                                               value="Komedia" name="genre"/>
+                                               value="Komedia" name="genre" defaultChecked={data?.genre?.includes("Komedia")}/>
                                         <label className="form-check-label" htmlFor="Komedia">Komedia</label>
                                     </div>
                                     <div className="form-check form-check-inline">
                                         <input className="form-check-input" type="checkbox" id="Horror"
-                                               value="Horror" name="genre"/>
+                                               value="Horror" name="genre" defaultChecked={data?.genre?.includes("Horror")}/>
                                         <label className="form-check-label" htmlFor="Horror">Horror</label>
                                     </div>
                                     <div className="form-check form-check-inline">
                                         <input className="form-check-input" type="checkbox" id="Romans"
-                                               value="Romans" name="genre"/>
+                                               value="Romans" name="genre" defaultChecked={data?.genre?.includes("Romans")}/>
                                         <label className="form-check-label" htmlFor="Romans">Romans</label>
                                     </div>
                                 </div>
@@ -91,27 +91,27 @@ const MovieForm = ({formId, title, data, onSubmit, children}) => {
                                 <div>
                                     <div className="form-check form-check-inline">
                                         <input className="form-check-input" type="checkbox" id="Angielski"
-                                               value="Angielski" name="lang"/>
+                                               value="Angielski" name="lang" defaultChecked={data?.lang?.includes("Angielski")}/>
                                         <label className="form-check-label" htmlFor="Angielski">Angielski</label>
                                     </div>
                                     <div className="form-check form-check-inline">
                                         <input className="form-check-input" type="checkbox" id="Niemiecki"
-                                               value="Niemiecki" name="lang"/>
+                                               value="Niemiecki" name="lang" defaultChecked={data?.lang?.includes("Niemiecki")}/>
                                         <label className="form-check-label" htmlFor="Niemiecki">Niemiecki</label>
                                     </div>
                                     <div className="form-check form-check-inline">
                                         <input className="form-check-input" type="checkbox" id="Polski"
-                                               value="Polski" name="lang"/>
+                                               value="Polski" name="lang" defaultChecked={data?.lang?.includes("Polski")}/>
                                         <label className="form-check-label" htmlFor="Polski">Polski</label>
                                     </div>
                                     <div className="form-check form-check-inline">
                                         <input className="form-check-input" type="checkbox" id="Włoski"
-                                               value="Włoski" name="lang"/>
+                                               value="Włoski" name="lang" defaultChecked={data?.lang?.includes("Włoski")}/>
                                         <label className="form-check-label" htmlFor="Włoski">Włoski</label>
                                     </div>
                                 </div>
                                 <label htmlFor="desc" className="form-label mt-2">Opis</label>
-                                <textarea className="form-control" id="desc" rows="3" name="desc"/>
+                                <textarea className="form-control" id="desc" rows="3" name="desc" defaultValue={data?.desc}/>
                             </form>
                         </div>
                         <div className="modal-footer">

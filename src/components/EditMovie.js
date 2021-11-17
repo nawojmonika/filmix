@@ -1,23 +1,37 @@
-import React, {useContext} from "react";
+import React, {useContext, useEffect, useState} from "react";
 import {DataContext} from "../contexts/DataContext";
 import MovieForm from "./MovieForm";
 
 const EditMovie = ({id}) => {
     const {initialData, setInitialData} = useContext(DataContext);
+    const [movieData, setMovieData] = useState({});
 
     const handleRemoveItem = (id) => {
-        const filteredData = initialData.filter((elem) => elem.id != id);
+        const filteredData = initialData.filter((elem) => elem.id !== id);
         setInitialData([...filteredData]);
     };
 
-    const handleEditItem = (id) => {
-        const filteredData = initialData.filter((elem) => elem.id != id);
-        // setInitialData([...filteredData]);
+    const handleEditItem = (values) => {
+        const data = initialData.map((movie) => {
+            if (movie.id === id) {
+                return {
+                    ...movie,
+                    ...values
+                }
+            }
+            return movie;
+        });
+        setInitialData(data);
     };
+
+    useEffect(() => {
+        const data = initialData.filter((elem) => elem.id === id)[0];
+        setMovieData(data);
+    }, [id, initialData]);
 
     return (
         <>
-            <MovieForm formId="editModal">
+            <MovieForm formId="editModal" title={movieData?.title} data={movieData} onSubmit={handleEditItem}>
                 <button className="btn btn-warning mb-2">
                     Edytuj
                 </button>
