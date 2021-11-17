@@ -10,9 +10,9 @@ const SortingButton = ({title, fieldName}) => {
             setData([...data].reverse())
         } else {
             const isString = sortField && Number.isNaN(Number(data[0][sortField]));
-            const sortedData = data.sort((a, b) => {
+            const sortedData = sortField ? data.sort((a, b) => {
                 return  isString ? a[sortField].localeCompare(b[sortField]) : a[sortField] - b[sortField];
-            });
+            }) : data;
             setData([...sortedData]);
         }
     }, [sortField, reverseSort]);
