@@ -1,8 +1,9 @@
 import React, {useRef} from "react";
 
-const MovieForm = ({formId, title, onSubmit, children}) => {
+const MovieForm = ({formId, title, data, onSubmit, children}) => {
     const getCheckedValues = (checkList) => checkList.filter(({checked}) => checked).map(({value}) => value);
     const closeBtn = useRef();
+    const form = useRef();
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -20,6 +21,7 @@ const MovieForm = ({formId, title, onSubmit, children}) => {
         };
         onSubmit && onSubmit(values);
         closeBtn.current.click();
+        form.current.reset();
     }
     return (
         <>
@@ -36,16 +38,16 @@ const MovieForm = ({formId, title, onSubmit, children}) => {
                                     aria-label="Close" ref={closeBtn}/>
                         </div>
                         <div className="modal-body">
-                            <form id={formId} onSubmit={handleSubmit}>
+                            <form ref={form} id={formId} onSubmit={handleSubmit}>
                                 <label htmlFor="title" className="form-label">Tytuł</label>
-                                <input type="text" className="form-control" id="title" name="title"/>
+                                <input type="text" className="form-control" id="title" name="title" defaultValue={data?.title}/>
                                 <label htmlFor="url" className="form-label mt-2">Url okładki</label>
-                                <input type="text" className="form-control" id="url" name="url"/>
+                                <input type="text" className="form-control" id="url" name="url" defaultValue={data?.url}/>
                                 <div className="row g-2 my-2">
                                     <div className="col-md">
                                         <div className="form-floating">
                                             <input type="number" className="form-control" id="price" name="price"
-                                                   inputMode="decimal" step={0.01}/>
+                                                   inputMode="decimal" step={0.01} defaultValue={data?.price}/>
                                             <label htmlFor="price">Cena</label>
                                         </div>
                                     </div>
