@@ -2,7 +2,10 @@ import React, {useContext, useEffect, useState} from "react";
 import {DataContext} from "../contexts/DataContext";
 import MovieForm from "./MovieForm";
 
+let count = 0;
+
 const EditMovie = ({id}) => {
+    count++;
     const {initialData, setInitialData} = useContext(DataContext);
     const [movieData, setMovieData] = useState({});
 
@@ -31,7 +34,7 @@ const EditMovie = ({id}) => {
 
     return (
         <>
-            <MovieForm formId="editModal" title={movieData?.title} data={movieData} onSubmit={handleEditItem}>
+            <MovieForm formId={`editModal-${count}`} title={movieData?.title} data={movieData} onSubmit={handleEditItem}>
                 <button className="btn btn-warning mb-2">
                     Edytuj
                 </button>
