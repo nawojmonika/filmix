@@ -104,12 +104,16 @@
 %----------------------------------------------------------------------------------------
 %	ASSIGNMENT CONTENT
 %----------------------------------------------------------------------------------------
+
+
     \section{Instrukcja}
+
     \subsection{Instalacja paczek}
     Aby zainstalować potrzebne paczki npm, należy uruchomić komendę \textit{npm start} w głównym folderze projektu.
-        \begin{lstlisting}
+    \begin{lstlisting}
             npm install
-        \end{lstlisting}
+    \end{lstlisting}
+
     \subsection{Uruchomienie aplikacji}
     Po zainstalowaniu potrzebnych paczek, możemy uruchomić serwer z aplikacją za pomocą komendy \textit{npm start}
     również w folderze głównym projektu.
@@ -117,6 +121,8 @@
             npm start
     \end{lstlisting}
     Aplikacja nasłuchuje na porcie: \url{http://localhost:3000}.
+
+
     \section{Wybory projektowe}
     Wybranym frameworkiem front-endowym do wykonania tego projektu jest \textbf{React}.
     Główną przyczyną tego wyboru jest istniejące doświadczenie w tworzeniu
@@ -127,7 +133,38 @@
     \\
     Dodatkowo została użyta biblioteka \textbf{uuid} do generowania unikatowych identyfikarów przy dodawaniu
     nowych filmów do kolekcji.
+
+
     \section{Opis kodu}
+    Tabela~\ref{tab:comp} zawiera opis głównych komponentów aplikacji.
+    \begin{table}[H]
+        \centering
+        \begin{tabular} {| l | l |}
+            \hline
+            Komponent   & Opis        \\
+            \hline
+            App         & \makecell{Jest to bazowy komponent aplikacji, dodaje komponenty niżej \\ w hierarchi do \textit{DataContextProvider}.} \\
+            AddMovie    & \makecell{Komponent zawierający logikę dodawania nowego filmu do kolekcji.} \\
+            \hline
+            EditMovie   & \makecell{Komponent zawierający logikę edytowania wybranego filmu z listy.} \\
+            \hline
+            MovieForm   & \makecell{Komponent zawierający formularz z polami filmu Formularz ten jest \\ wykorzystywany zarówno w komponencie \textit{AddMovie} jak i \textit{EditMovie}. } \\
+            \hline
+            MovieList   & \makecell{Komponent zawierający listę dostępnych filmów wraz ze wszystkimi \\ kontrolkami.} \\
+            \hline
+            PriceFilter & \makecell{Komponent zawierający logikę filtrowania listy ze względu na \\ przedział \textit{od/do}}. \\
+            \hline
+            SortButton  & \makecell{Komponent zawierający logikę sortownia na wybranych kolumnach. \\  Został wykorzystany dla kolumny \textit{Tytuł} oraz \textit{Cena}.} \\
+            \hline
+            DataContextProvider & \makecell{Komponent dostarczający \textit{context} aplikacji do reszty kompoentów. \\
+            \textit{DataContext} zawiera stan aplikacji z listą dostępnych filmów \\ oraz dodatkowych pól i metod modyfikujących ten stan.} \\
+            \hline
+        \end{tabular}
+        \caption{Główne komponenty aplikacji}
+        \label{tab:comp}
+    \end{table}
+
+
     \section{Przykładowe zrzuty ekranu}
     \begin{figure}[H]
         \includegraphics[width=\linewidth]{./assets/1.PNG}
@@ -158,7 +195,7 @@
 
     Rysunek~\ref{fig:edit} przedstawia analogiczny modal do edycji wybranego filmu.
 
-    \lstlistoflistings
+    \newpage
     \listoffigures
     \listoftables
 
