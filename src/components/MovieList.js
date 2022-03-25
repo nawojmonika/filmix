@@ -2,15 +2,12 @@ import React, {useContext} from "react";
 import {DataContext} from "../contexts/DataContext";
 import SortingButton from "./SortingButton";
 import PriceFilter from "./PriceFilter";
-import EditMovie from "./EditMovie";
-import AddMovie from "./AddMovie";
 
 const MovieList = () => {
     const {data} = useContext(DataContext);
 
     return (
         <>
-            <AddMovie/>
             <PriceFilter/>
             <table className="table table-striped align-middle">
                 <thead className="table-dark align-middle">
@@ -52,9 +49,6 @@ const MovieList = () => {
                         </td>
                         <td className="col-1">
                             {price} PLN
-                        </td>
-                        <td>
-                            <EditMovie id={id}/>
                         </td>
                     </tr>
                 )}
