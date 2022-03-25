@@ -1,14 +1,12 @@
 import React, {useContext} from "react";
-import {DataContext} from "../../contexts/DataContext";
-import SortingButton from "./SortingButton";
-import PriceFilter from "./PriceFilter";
+import {DataContext} from "../contexts/DataContext";
+import SortingButton from "./components/SortingButton";
 
-const MovieList = () => {
+const Home = () => {
     const {data} = useContext(DataContext);
 
     return (
         <>
-            <PriceFilter/>
             <table className="table table-striped align-middle">
                 <thead className="table-dark align-middle">
                 <tr>
@@ -20,14 +18,10 @@ const MovieList = () => {
                     <th scope="col">Opis</th>
                     <th scope="col">Język</th>
                     <th scope="col">Rok produkcji</th>
-                    <th scope="col">
-                        <SortingButton title={'Cena'} fieldName={'price'}/>
-                    </th>
-                    <th scope="col"/>
-                </tr>
+\                </tr>
                 </thead>
                 <tbody>
-                {data?.map(({id, title, genre, url, desc, lang, year, price}) =>
+                {data?.map(({id, title, genre, url, desc, lang, year}) =>
                     <tr key={id}>
                         <td className="col-2"><strong>{title}</strong></td>
                         <td>
@@ -47,9 +41,6 @@ const MovieList = () => {
                         <td>
                             <span className="badge bg-dark">{year}</span>
                         </td>
-                        <td className="col-1">
-                            {price} PLN
-                        </td>
                     </tr>
                 )}
                 </tbody>
@@ -57,4 +48,4 @@ const MovieList = () => {
         </>
     );
 }
-export default MovieList;
+export default Home;

@@ -1,5 +1,5 @@
 import React, {useContext, useEffect, useState} from "react";
-import {DataContext} from "../../contexts/DataContext";
+import {DataContext} from "../contexts/DataContext";
 
 const SortingButton = ({title, fieldName}) => {
     const {data, setData, sortField, setSortField} = useContext(DataContext);
