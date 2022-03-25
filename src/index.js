@@ -7,11 +7,9 @@ import { BrowserRouter } from "react-router-dom";
 
 ReactDOM.render(
     <React.StrictMode>
-        <div className="container-xl d-flex flex-column h-100 py-4">
         <BrowserRouter>
             <App/>
         </BrowserRouter>
-        </div>
     </React.StrictMode>,
     document.getElementById('root')
 );

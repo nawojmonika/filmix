@@ -1,6 +1,6 @@
 import React, {useContext} from "react";
 import {DataContext} from "../contexts/DataContext";
-import SortingButton from "./components/SortingButton";
+import SortingButton from "../components/SortingButton";
 
 const Home = () => {
     const {data} = useContext(DataContext);
