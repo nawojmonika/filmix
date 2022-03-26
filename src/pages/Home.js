@@ -18,10 +18,11 @@ const Home = () => {
                     <th scope="col">Opis</th>
                     <th scope="col">Język</th>
                     <th scope="col">Rok produkcji</th>
+                    <th scope="col">Cena</th>
 \                </tr>
                 </thead>
                 <tbody>
-                {data?.map(({id, title, genre, url, desc, lang, year}) =>
+                {data?.map(({id, title, genre, url, desc, lang, year, price}) =>
                     <tr key={id}>
                         <td className="col-2"><strong>{title}</strong></td>
                         <td>
@@ -40,6 +41,9 @@ const Home = () => {
                         </td>
                         <td>
                             <span className="badge bg-dark">{year}</span>
+                        </td>
+                        <td>
+                            {price} PLN
                         </td>
                     </tr>
                 )}

@@ -14,7 +14,6 @@ const Nav = () => {
                 <div className="collapse navbar-collapse" id="navbarNav">
                     <ul className="navbar-nav">
                         <CustomLink to='/'>Strona główna</CustomLink>
-                        <CustomLink to='/cennik'>Cennik</CustomLink>
                         <CustomLink to='/o-nas'>O nas</CustomLink>
                         <CustomLink to='/regulamin'>Regulamin</CustomLink>
                     </ul>
