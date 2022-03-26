@@ -30,7 +30,7 @@ const Home = () => {
                             <td className="col-2"><strong>{title}</strong></td>
                             <td>
                                 {genre?.map(name => (
-                                    <span className="badge bg-secondary">{name}</span>
+                                    <span key={name} className="badge bg-secondary">{name}</span>
                                 ))}
                             </td>
                             <td>
@@ -39,7 +39,7 @@ const Home = () => {
                             <td>{desc}</td>
                             <td>
                                 {lang?.map(name => (
-                                    <span className="badge bg-info">{name}</span>
+                                    <span key={name} className="badge bg-info">{name}</span>
                                 ))}
                             </td>
                             <td>
