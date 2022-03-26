@@ -5,6 +5,7 @@ import Regulations from "./pages/Regulations"
 import About from "./pages/About"
 import Pricing from "./pages/Pricing";
 import Nav from "./components/Nav";
+import ErrorPage from "./pages/ErrorPage";
 
 function App() {
     return (
@@ -16,6 +17,7 @@ function App() {
                     <Route path="/cennik" element={<Pricing />} />
                     <Route path="/o-nas" element={<About />} />
                     <Route path="/regulamin" element={<Regulations />} />
+                    <Route path="/*" element={<ErrorPage/>}/>
                 </Routes>
             </div>
         </DataContextProvider>
