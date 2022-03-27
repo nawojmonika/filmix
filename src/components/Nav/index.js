@@ -16,6 +16,7 @@ const Nav = () => {
                         <CustomLink to='/'>Strona główna</CustomLink>
                         <CustomLink to='/o-nas'>O nas</CustomLink>
                         <CustomLink to='/regulamin'>Regulamin</CustomLink>
+                        <CustomLink to='/koszyk'><i class="bi bi-basket"/> Koszyk</CustomLink>
                     </ul>
                 </div>
             </div>
