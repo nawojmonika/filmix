@@ -29,16 +29,11 @@ const DataContextProvider = ({ children }) => {
         resetData();
     }, [initialData]);
 
-    useEffect(() => {
-        console.info(basket)
-    }, [basket])
-
     const resetData = () => {
         setData(initialData);
     }
 
     const addToBasket = (id) => {
-        console.info(id)
         const basketSet = new Set([...basket, id]);
         setBaslet([...basketSet]);
     }

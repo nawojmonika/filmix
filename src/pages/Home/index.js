@@ -48,7 +48,7 @@ const Home = () => {
                             <td>
                                 {price} PLN
                             </td>
-                            <td>
+                            <td className="col-2">
                                 <ShopButton id={id} />
                             </td>
                         </tr>
