@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { DataContext } from "../../contexts/DataContext";
 import SortingButton from "../../components/SortingButton";
-import AddButton from "../../components/AddButton";
+import ShopButton from "../../components/ShopButton";
 
 const Home = () => {
     const { data } = useContext(DataContext);
@@ -49,7 +49,7 @@ const Home = () => {
                                 {price} PLN
                             </td>
                             <td>
-                                <AddButton />
+                                <ShopButton id={id} />
                             </td>
                         </tr>
                     )}
