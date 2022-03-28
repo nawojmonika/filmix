@@ -1,6 +1,5 @@
 import React, { useContext } from "react";
 import { DataContext } from "../../contexts/DataContext";
-import SortingButton from "../../components/SortingButton";
 import ShopButton from "../../components/ShopButton";
 
 const Home = () => {
@@ -12,9 +11,7 @@ const Home = () => {
             <table className="table table-striped align-middle">
                 <thead className="table-dark align-middle">
                     <tr>
-                        <th scope="col">
-                            <SortingButton title={'Tytuł'} fieldName={'title'} />
-                        </th>
+                        <th scope="col">Tytuł</th>
                         <th scope="col">Gatunek</th>
                         <th scope="col">Zdjęcie</th>
                         <th scope="col">Opis</th>
