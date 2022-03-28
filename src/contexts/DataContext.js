@@ -16,18 +16,24 @@ const DataContext = createContext({
 const DataContextProvider = ({ children }) => {
     const [initialData, setInitialData] = useState([]);
     const [data, setData] = useState([]);
-    const [basket, setBaslet] = useState([]);
+    const [basket, setBasket] = useState([]);
     const [sortField, setSortField] = useState('');
 
     useEffect(() => {
         fetch('mock_data.json').then(res => res.json()).then((data) => {
             setInitialData(data);
-        })
+        });
+        const basketItems = window.localStorage.getItem('basket');
+        setBasket(JSON.parse(basketItems) || []);
     }, []);
 
     useEffect(() => {
         resetData();
     }, [initialData]);
+
+    useEffect(() => {
+        window.localStorage.setItem('basket', JSON.stringify(basket))
+    }, [basket]);
 
     const resetData = () => {
         setData(initialData);
@@ -35,12 +41,12 @@ const DataContextProvider = ({ children }) => {
 
     const addToBasket = (id) => {
         const basketSet = new Set([...basket, id]);
-        setBaslet([...basketSet]);
+        setBasket([...basketSet]);
     }
 
     const removeFromBasket = (id) => {
         const filteredBasket = basket.filter((item) => item !== id);
-        setBaslet(filteredBasket);
+        setBasket(filteredBasket);
     }
 
     return (
