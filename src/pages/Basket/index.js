@@ -1,5 +1,6 @@
 import React, { useContext, useState, useEffect } from "react";
 import { DataContext } from "../../contexts/DataContext";
+import './basket.css';
 
 const Basket = () => {
     const { data, basket, removeFromBasket } = useContext(DataContext);
@@ -16,21 +17,22 @@ const Basket = () => {
     }, [basket]);
 
     return (
-        <>
+        <div className="basket">
+            <h2>Podsumowanie</h2>
             {
                 items.length ?
-                    <ul>
+                    <ol>
                         {items.map(({ id, title, price }) => (
                             <li key={id}>{title} <span>{price} PLN</span><i class="bi bi-x-lg" onClick={() => { removeFromBasket(id) }}></i></li>
                         ))}
                         <li>Razem: <span>{sum} PLN</span></li>
-                    </ul>
+                    </ol>
                     :
-                    <div>
+                    <p>
                         Koszyk jest pusty
-                    </div>
+                    </p>
             }
-        </>
+        </div>
     );
 }
 

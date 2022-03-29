@@ -1,0 +1,36 @@
+.basket h2 {
+    margin-bottom: 32px;
+}
+
+.basket h2, .basket p {
+    text-align: center;
+}
+
+.basket ol {
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.basket ol li {
+    display: flex;
+    font-size: 18px;
+    margin-top: 6px;
+}
+
+.basket ol li span {
+    color: rgba(0,0,0,.7);
+    margin-left: auto;
+    padding: 0 16px;
+}
+
+.basket ol li i {
+    color: darkred;
+    cursor: pointer;
+}
+
+.basket ol li:last-of-type {
+    margin-top: 16px;
+    list-style-type: none;
+    padding-right: 16px;
+    font-size: 22px;
+}
