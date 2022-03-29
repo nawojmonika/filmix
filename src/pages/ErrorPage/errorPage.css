@@ -1,0 +1,8 @@
+.error * {
+    text-align: center;
+}
+
+.error i {
+    display: block;
+    font-size: 85px;
+}
