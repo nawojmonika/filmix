@@ -14,7 +14,7 @@ const Basket = () => {
             return Number(prev?.price ?? 0) + Number(curr?.price ?? 0);
         }, { price: 0 });
         setSum(Number(sum).toFixed(2))
-    }, [basket]);
+    }, [basket, data]);
 
     return (
         <div className="basket">
@@ -23,7 +23,7 @@ const Basket = () => {
                 items.length ?
                     <ol>
                         {items.map(({ id, title, price }) => (
-                            <li key={id}>{title} <span>{price} PLN</span><i class="bi bi-x-lg" onClick={() => { removeFromBasket(id) }}></i></li>
+                            <li key={id}>{title} <span><span>{price} PLN</span><i class="bi bi-x-lg" onClick={() => { removeFromBasket(id) }}></i></span></li>
                         ))}
                         <li>Razem: <span>{sum} PLN</span></li>
                     </ol>
