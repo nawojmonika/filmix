@@ -11,7 +11,7 @@ const About = () => {
                     Użyte technologie:
                     <ul>
                         <li>React.js</li>
-                        <li>Bootstrap 5</li>
+                        <li>Bootstrap 4</li>
                         <li>HTML5</li>
                         <li>CSS3</li>
                     </ul>
