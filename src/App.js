@@ -11,7 +11,6 @@ function App() {
     return (
         <DataContextProvider>
             <Nav />
-            <div className="container-xl d-flex flex-column h-100 py-4">
                 <Routes>
                     <Route path="/" element={<Home />} />
                     <Route path="/o-nas" element={<About />} />
@@ -19,7 +18,6 @@ function App() {
                     <Route path="/koszyk" element={<Basket/>}/>
                     <Route path="/*" element={<ErrorPage/>}/>
                 </Routes>
-            </div>
         </DataContextProvider>
     );
 }

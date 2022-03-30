@@ -1,0 +1,18 @@
+.home h2 {
+    text-align: center;
+    margin: 24px 0;
+}
+
+.home table {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.home table img {
+    max-height: 350px;
+}
+
+.home .badge {
+    color: #fff;
+}
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImhvbWUuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0lBQ0ksa0JBQWtCO0lBQ2xCLGNBQWM7QUFDbEI7O0FBRUE7SUFDSSxVQUFVO0lBQ1YsY0FBYztBQUNsQjs7QUFFQTtJQUNJLGlCQUFpQjtBQUNyQjs7QUFFQTtJQUNJLFdBQVc7QUFDZiIsImZpbGUiOiJob21lLmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi5ob21lIGgyIHtcclxuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcclxuICAgIG1hcmdpbjogMjRweCAwO1xyXG59XHJcblxyXG4uaG9tZSB0YWJsZSB7XHJcbiAgICB3aWR0aDogOTAlO1xyXG4gICAgbWFyZ2luOiAwIGF1dG87XHJcbn1cclxuXHJcbi5ob21lIHRhYmxlIGltZyB7XHJcbiAgICBtYXgtaGVpZ2h0OiAzNTBweDtcclxufVxyXG5cclxuLmhvbWUgLmJhZGdlIHtcclxuICAgIGNvbG9yOiAjZmZmO1xyXG59Il19 */
