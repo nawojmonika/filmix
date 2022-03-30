@@ -3,9 +3,9 @@ import './regulations.css';
 
 const Regulations = () => {
     return (
-        <div>
-            <h2 className="regulations-header">Regulamin wirtualnej wypożyczalni filmów</h2>
-            <div className="regulations-content">
+        <div className="regulations">
+            <h2>Regulamin wirtualnej wypożyczalni filmów</h2>
+            <div>
                 Niniejszy komponent zawiera regulamin wirtualnej wypożyczalni filmów "Filmex" nazywanej dalej "Filmex"... <br/> 
 
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed rhoncus porta erat in efficitur. Nam consectetur tortor sit amet odio cursus mattis eu ut dolor. Morbi vestibulum, nibh sit amet malesuada commodo, nisi est pharetra justo, ac lacinia nisi enim eu ex. Maecenas a est sit amet mi hendrerit consequat sed eu mi. Fusce eget leo id tellus consectetur vestibulum. Duis sed est porta, pretium sapien eu, auctor erat. In quis lacinia leo. Donec gravida dictum dolor, vitae commodo nisi ultricies ut. Nulla suscipit augue at placerat semper. Nam velit risus, lacinia vel felis ut, gravida cursus justo. Aenean euismod ex at ante efficitur mollis. Vestibulum tempus leo posuere, lobortis nibh a, faucibus massa. Suspendisse tincidunt maximus lectus nec facilisis. Praesent accumsan lorem ac mi pulvinar, non scelerisque odio porta. Sed eleifend ultrices quam, nec aliquam erat luctus sit amet.
