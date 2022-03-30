@@ -7,8 +7,8 @@ const CustomLink = ({children, to, ...props}) => {
     let match = useMatch({ path: resolved.pathname, end: true });
 
     return (
-        <li className="nav-item">
-            <Link className={`nav-link ${match ? 'active' : ''}`} to={to} {...props} aria-current={match && 'page'}>{children}</Link>
+        <li className={`nav-item ${match ? 'active' : ''}`}>
+            <Link className="nav-link" to={to} {...props} aria-current={match && 'page'}>{children}</Link>
         </li>
     );
 }
